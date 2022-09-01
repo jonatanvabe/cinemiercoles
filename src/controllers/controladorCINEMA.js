@@ -46,7 +46,7 @@ let peliculas=[
         idioma:"ES"
     },
     {
-        nombre:"Demonio en el espejo",
+        nombre:"Demonio ",
         genero:"Terror",
         duracion:250,
         poster:"https://firebasestorage.googleapis.com/v0/b/cinejv-2b20d.appspot.com/o/demonioenelespejo.jpg?alt=media&token=f3590527-bfa1-4595-af1e-7361ac666b5b",
@@ -133,6 +133,8 @@ let peliculas=[
 
 // recorriendo un arreglo en js
 
+let fila=document.getElementById("fila")
+
 peliculas.forEach(function(pelicula){
     //console.log(pelicula)
     console.log(pelicula.nombre)
@@ -142,6 +144,68 @@ peliculas.forEach(function(pelicula){
     console.log(pelicula.sinopsis)
     console.log(pelicula.clasificacion)
     console.log(pelicula.idioma)
+
+
+    //traversing (crear etiquetas de html desde js)
+    //1. creamaos una columbna para cada pelicula
+    let columbna=document.createElement("div")
+    columbna.classList.add("col")
+
+    //2 creamaos una targeta para cada pelicula
+
+    let tarjeta=document.createElement("div")
+    tarjeta.classList.add("card","h-100")
+
+    //3 creamos una foto para cada pelicula
+    let poster=document.createElement("img")
+    poster.classList.add("card-img-top")
+    poster.src=pelicula.poster
+
+    //4. creamaos el nombre de la palicula 
+    let nombre=document.createElement("h3")
+    nombre.classList.add("card-title","text-center")
+    nombre.textContent=pelicula.nombre
+
+    //5. creamos el genero de cada pelicula
+    let genero=document.createElement("h5")
+    genero.classList.add("text-start")
+    genero.textContent= "genero: "+pelicula.genero
+    //6 creamamo el idioma de cada palicula
+
+    let idioma=document.createElement("h6")
+    idioma.classList.add("fw-bold")
+    idioma.textContent= "idioma: "+pelicula.idioma
+
+    //7 creamos la sinopsis
+    let sinopsis=document.createElement("p") 
+    sinopsis.classList.add("d-none")   
+    sinopsis.textContent=pelicula.sinopsis
+
+    //8 creamos la clasificacion
+
+    let clasificacion=document.createElement("h7")
+    clasificacion.classList.add("fw-bold")
+    clasificacion.textContent= "clas: "+pelicula.clasificacion
+
+
+    
+
+    // padres e hijos
+
+    tarjeta.appendChild(poster)
+    tarjeta.appendChild(nombre)
+    tarjeta.appendChild(genero)     
+    tarjeta.appendChild(clasificacion)
+    tarjeta.appendChild(idioma)
+    tarjeta.appendChild(sinopsis)    
+    columbna.appendChild(tarjeta)
+    fila.appendChild(columbna)
+    
+})
+
+// detectando seleccion de una pelicula 
+fila.addEventListener("click",function(){
+    alert("Esta seleccinando una palicula")
 })
 
 
