@@ -28,9 +28,9 @@ fila.addEventListener("click",function(evento){
     peliculaSeleccionada.genero=(evento.target.parentElement.querySelector("h5").textContent)//genero
     peliculaSeleccionada.idioma=(evento.target.parentElement.querySelector("h6").textContent)//idioma
     peliculaSeleccionada.clas=(evento.target.parentElement.querySelector("h7").textContent)//clas
-    peliculaSeleccionada.actores=(evento.target.parentElement.querySelector("h1").textContent)//actores
-    peliculaSeleccionada.director=(evento.target.parentElement.querySelector("h2").textContent)//director
-
+    peliculaSeleccionada.actores=(evento.target.parentElement.querySelector("h5").textContent)//actores
+    peliculaSeleccionada.director=(evento.target.parentElement.querySelector("h3").textContent)//director
+     peliculaSeleccionada.director=(evento.target.parentElement.querySelector(".text-muted").textContent)//director
     console.log(peliculaSeleccionada)
 
     //llamando a la memoria de navegador

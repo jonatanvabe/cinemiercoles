@@ -34,29 +34,29 @@ export function pintarPeliculas(peliculas){
         //6 creamamo el idioma de cada palicula
     
         let idioma=document.createElement("h6")
-        idioma.classList.add("fw-bold","text-center")
+        idioma.classList.add("fw-bold")
         idioma.textContent= "idioma: "+pelicula.idioma
     
         //7 creamos la sinopsis
         let sinopsis=document.createElement("p") 
-        sinopsis.classList.add("d-none","text-center")   
+        sinopsis.classList.add("d-none")   
         sinopsis.textContent=pelicula.sinopsis
     
         //8 creamos la clasificacion
     
         let clasificacion=document.createElement("h7")
-        clasificacion.classList.add("fw-bold","text-center")
+        clasificacion.classList.add("fw-bold")
         clasificacion.textContent= "clas: "+pelicula.clasificacion
     
         //9 creamos el director
-        let director=document.createElement("h2")
-        director.classList.add("fw-bold","text-center")
+        let director=document.createElement("p")
+        director.classList.add("text-muted")
         director.textContent="Director: "+pelicula.director
     
     
         //9 creamos el actores
-        let actores=document.createElement("h1")
-        actores.classList.add("fw-bold","text_center")
+        let actores=document.createElement("h3")
+        actores.classList.add("text-center")
         actores.textContent="Actores: "+pelicula.actores
     
     
